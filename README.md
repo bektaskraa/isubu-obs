@@ -1,12 +1,12 @@
-# React + Vite
+# Öğrenci Bilgi Sistemi Tasarımı
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Proje Hakkında
+Merhabalar! Üniversite sonuçları belli olduğunda Isparta Uygulamalı Bilimler Üniversitesi Bilgisayar Mühendisliği'ni kazanmıştım. OBS, yani Öğrenci Bilgi Sistemi'ne giriş yaptığımda bir şok geçirdim; sistemi yapan kişinin CSS’den haberi yok diye yorumladım :D. Sistemin tasarımı salt metinden oluşuyordu, bu durum her şeyin yerinin karışmasına ve okunurluğun azalmasına yol açıyordu. Bende bu tasarımı daha göze hitap eden bir şekilde yenilemeyi düşündüm. Taslak tasarımları bana daha kolay geldiği için Canva ile yaptım; React ile de UX deneyimi iyi olan bir arabirim geliştireceğim.
+## Proje Taslak Resimleri
+![OBS Taslak 1](./README_SOURCE/draft1.png)
+(Görsel 1.1) Ana sayfanın sol tarafında menü bulunuyor, sağ tarafta ise uygulamalar ve gno bilgisi yer alıyor. En üst kısımda kullanıcı bilgilerini gösteren bir alan mevcut. Orta bölümde ise sekmeli bir menü (tab menu) kullanıldı; böylece hem duyurulara hem de takvime tek bir sayfa üzerinden kolayca erişilebiliyor. Ekstra bir sayfaya geçmeye gerek kalmadı.
+![OBS Taslak 2](./README_SOURCE/draft2.png)
+(Görsel 1.2) Dersler sayfasında accordion kullanrak gereksiz bilgi kirliliği ortadan kaldırıldı.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Önemli bilgi
+Proje taslak tasarımları hala geliştiriliyor, önerilerinizi ve yorumlarınızı bekliyorum <3
