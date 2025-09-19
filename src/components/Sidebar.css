@@ -1,10 +1,23 @@
+:root {
+    --color-main: #1c365e;
+    --color-placeholder: #f6f6f6;
+}
+
+
 .nav-button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 15px;
-    background-color: #f6f6f6;
-    font-size: 17px;
+    background-color: var(--color-placeholder);
+    font-size: 20px;
     color: black;
     border-radius: 15px;
 }
 .nav-button:hover{
     background-color: #eaeaea;
+}
+.nav-button.active{
+    background-color: var(--color-main);
+    color: white;
 }
