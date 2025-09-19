@@ -1,45 +1,45 @@
 import React from "react";
-import './Sidebar.css'
+import './Sidebar.css';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome,faUserGraduate,faFileLines,faUsers,faUser,faSignOut } from '@fortawesome/free-solid-svg-icons';
 
-
 function Sidebar() {
     return (
-        <div className=" p-3" style={{ width: "250px", minHeight: "100vh" }}>
+        <div className="p-3" style={{ width: "250px", minHeight: "100vh" }}>
             <ul className="nav flex-column">
                 <li className="nav-item mb-2">
-                    <a href="#" className="nav-link nav-button active">
+                    <NavLink to="/" className="nav-link nav-button">
                         <FontAwesomeIcon icon={faHome} />
                         Ana Sayfa
-                    </a>
+                    </NavLink>
                 </li>
                 <li className="nav-item mb-2">
-                    <a href="#" className="nav-link nav-button">
+                    <NavLink to="/dersler" className="nav-link nav-button">
                         <FontAwesomeIcon icon={faUserGraduate} />
                         Dersler
-                    </a>
+                    </NavLink>
                 </li>
                 <li className="nav-item mb-2">
-                    <a href="#" className="nav-link nav-button">
+                    <NavLink to="/sinavlar" className="nav-link nav-button">
                         <FontAwesomeIcon icon={faFileLines} />
                         Sınavlar
-                    </a>
+                    </NavLink>
                 </li>
                 <li className="nav-item mb-2">
-                    <a href="#" className="nav-link nav-button">
+                    <NavLink to="/kulupler" className="nav-link nav-button">
                         <FontAwesomeIcon icon={faUsers} />
                         Klüpler
-                    </a>
+                    </NavLink>
                 </li>
                 <li className="nav-item mb-2">
-                    <a href="#" className="nav-link nav-button">
+                    <NavLink to="/hesap" className="nav-link nav-button">
                         <FontAwesomeIcon icon={faUser} />
                         Hesap
-                    </a>
+                    </NavLink>
                 </li>
                 <li className="nav-item mb-2">
-                    <a href="#" className="nav-link nav-button">
+                    <a href="#" className="nav-link nav-button" onClick={() => console.log("Oturumu Kapat")}>
                         <FontAwesomeIcon icon={faSignOut} />
                         Oturumu Kapat
                     </a>
