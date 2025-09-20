@@ -7,7 +7,7 @@ import { faHome,faUserGraduate,faFileLines,faUsers,faUser,faSignOut } from '@for
 function Sidebar() {
     return (
         <div className="p-3" style={{ width: "250px", minHeight: "100vh" }}>
-            <ul className="nav flex-column">
+            <ul className="nav sidebar flex-column">
                 <li className="nav-item mb-2">
                     <NavLink to="/" className="nav-link nav-button">
                         <FontAwesomeIcon icon={faHome} />

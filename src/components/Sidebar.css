@@ -3,6 +3,9 @@
     --color-placeholder: #f6f6f6;
 }
 
+.sidebar {
+    position: fixed;
+}
 
 .nav-button{
     display: flex;
