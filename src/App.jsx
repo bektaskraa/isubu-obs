@@ -1,6 +1,8 @@
 import Sidebar from "./components/Sidebar";
 import GridMenu from "./components/GridMenu";
+import './App.css';
 import { Routes, Route } from 'react-router-dom';
+
 
 
 import Dashboard from './pages/Home.jsx';
