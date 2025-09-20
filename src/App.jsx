@@ -1,4 +1,5 @@
 import Sidebar from "./components/Sidebar";
+import GridMenu from "./components/GridMenu";
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -25,7 +26,7 @@ function App() {
                     </Routes>
                 </div>
                 <div className={'col-4'}>
-                    grid menu
+                    <GridMenu />
                 </div>
             </div>
         </div>

@@ -1,0 +1,67 @@
+.dashboard-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.gno-card {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.gno-card:hover {
+    background-color: #202f3c;
+    cursor: pointer;
+}
+.gno-card span{
+    margin: 0px;
+    text-align: left;
+    font-size: 25px;
+}
+.gno-card h2{
+    margin: 0px;
+    font-size: 80px;
+}
+
+
+.action-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin: 20px 0px 0px 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-3px); /* Hafif yukarı kalkma efekti */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.action-card .fa-icon {
+    font-size: 32px; /* İkon boyutu */
+    color: #555; /* Koyu gri renk */
+}
+
+.action-card span {
+    font-weight: 600;
+    color: #333; /* Koyu yazı rengi */
+}
