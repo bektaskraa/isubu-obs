@@ -13,10 +13,10 @@ function App() {
     return (
         <div className={'container-fluid'} style={{ padding: '50px' }}>
             <div className={'row'}>
-                <div className={'col-4'}>
+                <div className={'col-2'}>
                     <Sidebar />
                 </div>
-                <div className={'col-4'}>
+                <div className={'col-7'}>
                     <Routes>
                         <Route path="/" element={<Dashboard />} />
                         <Route path="/dersler" element={<Lessons />} />
@@ -25,7 +25,7 @@ function App() {
                         <Route path="/hesap" element={<Account />} />
                     </Routes>
                 </div>
-                <div className={'col-4'}>
+                <div className={'col-3'}>
                     <GridMenu />
                 </div>
             </div>

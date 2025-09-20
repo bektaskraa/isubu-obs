@@ -2,7 +2,10 @@ import React from 'react';
 
 function Home() {
     return (
-        <p>ana sayfa</p>
+        <div className={"container-fluid"}>
+            <p>ana sayfa</p>
+        </div>
+
     );
 }
 
