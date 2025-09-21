@@ -1,0 +1,65 @@
+.upcoming-events-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.upcoming-events-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.event-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-icon {
+    font-size: 24px;
+    color: #555;
+}
+
+.event-title {
+    font-weight: 600;
+    color: #333;
+}
+
+.event-date {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.event-countdown {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #007bff;
+    background-color: #e6f2ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
