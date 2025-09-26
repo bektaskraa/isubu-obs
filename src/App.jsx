@@ -13,12 +13,12 @@ import Account from './pages/Account.jsx';
 
 function App() {
     return (
-        <div className={'container-fluid'} style={{ padding: '50px' }}>
-            <div className={'row'}>
+        <div className={'container'}>
+            <div className={'row'}  style={{ padding: '50px' }}>
                 <div className={'col-2'}>
                     <Sidebar />
                 </div>
-                <div className={'col-7'}>
+                <div className={'col-7'} style={{ paddingLeft: '50px' }}>
                     <Routes>
                         <Route path="/" element={<Dashboard />} />
                         <Route path="/dersler" element={<Lessons />} />

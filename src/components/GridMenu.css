@@ -1,3 +1,11 @@
+:root {
+    --color-main: #1c365e;
+    --color-main-secondary: #152743;
+    --color-placeholder: #f6f6f6;
+    --color-action-card-text: rgba(255, 255, 255, 0.71);
+}
+
+
 .dashboard-card {
     background-color: #fff;
     border-radius: 15px;
@@ -10,7 +18,7 @@
 }
 
 .gno-card {
-    background-color: #2c3e50;
+    background-color: var(--color-main);
     color: #fff;
     padding: 30px;
 
@@ -20,17 +28,17 @@
     align-items: center;
 }
 .gno-card:hover {
-    background-color: #202f3c;
+    background-color: var(--color-main-secondary);
     cursor: pointer;
 }
 .gno-card span{
     margin: 0px;
     text-align: left;
-    font-size: 25px;
+    font-size: 20px;
 }
 .gno-card h2{
     margin: 0px;
-    font-size: 80px;
+    font-size: 60px;
 }
 
 
@@ -51,17 +59,36 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.col-6:nth-child(4n+1) .action-card {
+    background-color: var(--color-main);
+    color: var(--color-action-card-text);!important;
+}
+
+.col-6:nth-child(4n+2) .action-card {
+    background-color: var(--color-main-secondary);
+    color: var(--color-action-card-text);!important;
+}
+
+.col-6:nth-child(4n+3) .action-card {
+    background-color: #577BEF;
+    color: var(--color-action-card-text);!important;
+
+}
+
+.col-6:nth-child(4n+4) .action-card {
+    background-color: #3552BA;
+    color: var(--color-action-card-text);!important;
+}
+
 .action-card:hover {
-    transform: translateY(-3px); /* Hafif yukarı kalkma efekti */
+    transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .action-card .fa-icon {
-    font-size: 32px; /* İkon boyutu */
-    color: #555; /* Koyu gri renk */
+    font-size: 32px;
 }
 
 .action-card span {
     font-weight: 600;
-    color: #333; /* Koyu yazı rengi */
 }

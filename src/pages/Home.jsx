@@ -1,27 +1,28 @@
 import React from 'react';
+import UpcomingEvents from "../components/UpcomingEvents";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser,faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
     return (
-        <div className={"container-fluid"}>
+        <div className={"container"}>
             <div className={'row'}>
                 <div className={'col-12'}>
                     <div className={'card'}>
                         <div className={'card-body'}>
                             <div className={'row'}>
-                                <div className={'col-2'}>
+                                <div className={'col-4'}>
                                     <img className={'profile-picture'} src={'../../src/assets/profile.jpg'}/>
                                 </div>
-                                <div className={'col-10'}>
-                                    <h1>Bektaş Kara</h1>
-                                    <h5 className={"text-muted"}>Bilgisayar Mühendisliği</h5>
-                                    <span className={"text-muted"}>
+                                <div className={'col-8'}>
+                                    <h3>Bektaş Kara</h3>
+                                    <h6 className={"text-muted"}>Bilgisayar Mühendisliği</h6>
+                                    <span style={{fontSize:14}} className={"text-muted"}>
                                         <FontAwesomeIcon icon={faUser} />
                                         24953875415
                                     </span>
                                     <br/>
-                                    <span className={"text-muted"}>
+                                    <span style={{fontSize:14}} className={"text-muted"}>
                                         <FontAwesomeIcon icon={faEnvelope} />
                                         24953875415@isparta.edu.tr
                                     </span>
