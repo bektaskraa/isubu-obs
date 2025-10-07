@@ -2,7 +2,7 @@ import React from "react";
 import './GridMenu.css';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar, faBullhorn, faEnvelope, faVideo } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar, faBullhorn, faEnvelope, faVideo,faUtensils,faCalendarXmark,faFileLines } from '@fortawesome/free-solid-svg-icons';
 
 function GridMenu() {
     return (
@@ -38,6 +38,12 @@ function GridMenu() {
                                </div>
                                <div className={'col-6'}>
                                    <div className="action-card">
+                                       <FontAwesomeIcon icon={faFileLines} className="fa-icon" />
+                                       <span>Ödevler</span>
+                                   </div>
+                               </div>
+                               <div className={'col-6'}>
+                                   <div className="action-card">
                                        <FontAwesomeIcon icon={faBullhorn} className="fa-icon" />
                                        <span>Duyurular</span>
                                    </div>
@@ -52,6 +58,18 @@ function GridMenu() {
                                    <div className="action-card">
                                        <FontAwesomeIcon icon={faVideo} className="fa-icon" />
                                        <span>Canlı Ders</span>
+                                   </div>
+                               </div>
+                               <div className={'col-6'}>
+                                   <div className="action-card">
+                                       <FontAwesomeIcon icon={faCalendarXmark} className="fa-icon" />
+                                       <span>Devamsızlık</span>
+                                   </div>
+                               </div>
+                               <div className={'col-6'}>
+                                   <div className="action-card">
+                                       <FontAwesomeIcon icon={faUtensils} className="fa-icon" />
+                                       <span>Yemekhane</span>
                                    </div>
                                </div>
                            </div>

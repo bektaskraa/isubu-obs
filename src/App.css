@@ -2,3 +2,7 @@
     width: 100%;
     border-radius: 10px;
 }
+
+.user-information span{
+    gap: 200px;
+}

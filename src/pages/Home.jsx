@@ -1,7 +1,7 @@
 import React from 'react';
 import UpcomingEvents from "../components/UpcomingEvents";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser,faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faUser,faEnvelope,faChalkboardUser } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
     return (
@@ -17,15 +17,22 @@ function Home() {
                                 <div className={'col-8'}>
                                     <h3>Bektaş Kara</h3>
                                     <h6 className={"text-muted"}>Bilgisayar Mühendisliği</h6>
-                                    <span style={{fontSize:14}} className={"text-muted"}>
-                                        <FontAwesomeIcon icon={faUser} />
-                                        24953875415
-                                    </span>
-                                    <br/>
-                                    <span style={{fontSize:14}} className={"text-muted"}>
-                                        <FontAwesomeIcon icon={faEnvelope} />
-                                        24953875415@isparta.edu.tr
-                                    </span>
+                                    <div className={'user-information'}>
+                                        <span style={{fontSize:14}} className={"text-muted"}>
+                                            <FontAwesomeIcon icon={faUser} />
+                                            24953875415
+                                        </span>
+                                        <br/>
+                                        <span style={{fontSize:14}} className={"text-muted"}>
+                                            <FontAwesomeIcon icon={faEnvelope} />
+                                            24953875415@isparta.edu.tr
+                                        </span>
+                                        <br/>
+                                        <span style={{fontSize:14}} className={"text-muted"}>
+                                            <FontAwesomeIcon icon={faChalkboardUser} />
+                                            <a href={'#'}>Doç. Dr. Serap Ergün</a>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
