@@ -8,34 +8,32 @@ function Home() {
         <div className={"container"}>
             <div className={'row'}>
                 <div className={'col-12'}>
-                    <div className={'card'}>
-                        <div className={'card-body'}>
+                    <div className={'isubu-card'}>
                             <div className={'row'}>
                                 <div className={'col-4'}>
                                     <img className={'profile-picture'} src={'../../src/assets/profile.jpg'}/>
                                 </div>
                                 <div className={'col-8'}>
                                     <h3>Bektaş Kara</h3>
-                                    <h6 className={"text-muted"}>Bilgisayar Mühendisliği</h6>
+                                    <h5 className={"text-muted"}>Bilgisayar Mühendisliği</h5>
                                     <div className={'user-information'}>
-                                        <span style={{fontSize:14}} className={"text-muted"}>
+                                        <span className={"text-muted"}>
                                             <FontAwesomeIcon icon={faUser} />
-                                            24953875415
+                                            <a>24952875461</a>
                                         </span>
                                         <br/>
-                                        <span style={{fontSize:14}} className={"text-muted"}>
+                                        <span  className={"text-muted"}>
                                             <FontAwesomeIcon icon={faEnvelope} />
-                                            24953875415@isparta.edu.tr
+                                            <a>l24952875461@isparta.edu.tr</a>
                                         </span>
                                         <br/>
-                                        <span style={{fontSize:14}} className={"text-muted"}>
+                                        <span className={"text-muted"}>
                                             <FontAwesomeIcon icon={faChalkboardUser} />
                                             <a href={'#'}>Doç. Dr. Serap Ergün</a>
                                         </span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
