@@ -29,7 +29,7 @@ function Sidebar() {
                 <li className="nav-item mb-2">
                     <NavLink to="/kulupler" className="nav-link nav-button">
                         <FontAwesomeIcon icon={faUsers} />
-                        Klüpler
+                        Kulüpler
                     </NavLink>
                 </li>
                 <li className="nav-item mb-2">
