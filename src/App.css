@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+:root {
+    --color-main: #1c365e;
+    --color-placeholder: #f6f6f6;
+    --color-main-light: #2c548f;
+    --color-placeholder-dark: #e0e0e0;
+}
+
+
+.bg-main{
+    background-color: var(--color-main);
+    color: white;
+}
+
+
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -37,4 +51,30 @@ h3 {
     color: #333333;
 
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.ders-accordion .accordion-header {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.ders-accordion .accordion-header:hover {
+    background-color: #f0f0f0;
+}
+
+.ders-accordion .accordion-body li {
+    padding: 0.3rem 0;
+}
+
+.ders-accordion .card {
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.ders-accordion .card + .card {
+    margin-top: 1rem;
 }
