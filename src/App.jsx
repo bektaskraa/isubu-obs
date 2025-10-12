@@ -1,24 +1,25 @@
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import GridMenu from "./components/GridMenu";
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-
-
-
-import Dashboard from './pages/Home.jsx';
-import Lessons from './pages/Lessons.jsx';
-import Exams from './pages/Exams.jsx';
-import Clubs from './pages/Clubs.jsx';
-import Account from './pages/Account.jsx';
+import Dashboard from "./pages/Home.jsx";
+import Lessons from "./pages/Lessons.jsx";
+import Exams from "./pages/Exams.jsx";
+import Clubs from "./pages/Clubs.jsx";
+import Account from "./pages/Account.jsx";
+import "./App.css";
 
 function App() {
+
     return (
-        <div className={'container'}>
-            <div className={'row'}  style={{ padding: '50px' }}>
-                <div className={'col-2'}>
+        <div className="container">
+
+            <div className="row" style={{ padding: "30px" }}>
+                <div className={`col-12 col-md-2`}>
                     <Sidebar />
                 </div>
-                <div className={'col-7'} style={{ paddingLeft: '50px' }}>
+
+                <div className="col-12 col-md-7">
                     <Routes>
                         <Route path="/" element={<Dashboard />} />
                         <Route path="/dersler" element={<Lessons />} />
@@ -27,7 +28,8 @@ function App() {
                         <Route path="/hesap" element={<Account />} />
                     </Routes>
                 </div>
-                <div className={'col-3'}>
+
+                <div className="col-12 col-md-3 mt-4 mt-md-0">
                     <GridMenu />
                 </div>
             </div>
