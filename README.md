@@ -5,12 +5,39 @@ Merhabalar! Üniversite sonuçları belli olduğunda Isparta Uygulamalı Bilimle
 
 ---
 
-## 🖼️ Proje Taslak Resimleri
-![OBS Taslak 1](./README_SOURCE/draft1.png)
-(Görsel 1.1) Ana sayfanın sol tarafında menü bulunuyor, sağ tarafta ise uygulamalar ve gno bilgisi yer alıyor. En üst kısımda kullanıcı bilgilerini gösteren bir alan mevcut. Orta bölümde ise sekmeli bir menü (tab menu) kullanıldı; böylece hem duyurulara hem de takvime tek bir sayfa üzerinden kolayca erişilebiliyor. Ekstra bir sayfaya geçmeye gerek kalmadı.
+## 🖼️ Proje Resimleri
+![OBS Anasayfa](./README_SOURCE/home-page.png)
 
-![OBS Taslak 2](./README_SOURCE/draft2.png)
-(Görsel 1.2) Dersler sayfasında accordion kullanrak gereksiz bilgi kirliliği ortadan kaldırıldı.
+![OBS Dersler](./README_SOURCE/lessons-page.png)
+
+---
+## Nasıl Kullanılır
+
+1. **Projeyi Klonlayın**
+```
+git clone https://github.com/bektaskraa/isubu-obs
+cd isubu-obs
+```
+
+2. **Gerekli Bağımlılıkları Kurun**
+
+```
+npm install
+```
+
+3. **Projeyi Çalıştırın**
+   Local ortamda başlatmak için:
+
+```
+npm run dev
+```
+
+
+4. **Tarayıcıda Görüntüleyin**
+
+```
+http://localhost:5173/
+```
 
 ---
 
@@ -27,4 +54,4 @@ Bu projede aşağıdaki teknolojiler ve kütüphaneler kullanılmıştır:
 ---
 
 ### 💡 Önemli Bilgi
-Proje taslak tasarımları hala geliştiriliyor, önerilerinizi ve yorumlarınızı bekliyorum <3
+Proje hala geliştiriliyor, önerilerinizi ve yorumlarınızı bekliyorum <3
