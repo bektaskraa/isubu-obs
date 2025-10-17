@@ -1,1 +1,13 @@
-{ "Computer Engineering": "Bilgisayar Mühendisliği" }
+{
+  "_title": "Home",
+  "Computer Engineering": "Bilgisayar Mühendisliği",
+
+  "_title": "Sidebar",
+  "Home Page": "Ana Sayfa",
+  "Lessons Page": "Dersler",
+  "Exams Page": "Sınavlar",
+  "Clubs Page": "Kulüpler",
+  "Account Page": "Hesap",
+  "Logout": "Oturumu Kapat"
+
+}

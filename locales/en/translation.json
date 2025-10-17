@@ -1,1 +1,13 @@
-{ "Computer Engineering": "Computer Engineering" }
+{
+  "_title": "Home",
+  "Computer Engineering": "Computer Engineering",
+
+  "_title": "Sidebar",
+  "Home Page": "Home",
+  "Lessons Page": "Lessons",
+  "Exams Page": "Exams",
+  "Clubs Page": "Clubs",
+  "Account Page": "Account",
+  "Logout": "Logout"
+
+}

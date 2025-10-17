@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./Sidebar.css";
 import { NavLink } from "react-router-dom";
+
+// Stylesheet
+import "./Sidebar.css";
+
+// Icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faHome,
     faUserGraduate,
@@ -9,14 +14,18 @@ import {
     faUser,
     faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// Localization
+import { useTranslation } from "react-i18next";
+
+
 
 function Sidebar() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const sidebarRef = useRef(null);
     const toggleRef = useRef(null);
+    const { t } = useTranslation();
 
-    // dışına tıklayınca kapan
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (
@@ -50,31 +59,31 @@ function Sidebar() {
                     <li className="nav-item mb-2">
                         <NavLink to="/" className="nav-link nav-button">
                             <FontAwesomeIcon icon={faHome} />
-                            Ana Sayfa
+                            {t("Home Page")}
                         </NavLink>
                     </li>
                     <li className="nav-item mb-2">
                         <NavLink to="/dersler" className="nav-link nav-button">
                             <FontAwesomeIcon icon={faUserGraduate} />
-                            Dersler
+                            {t("Lessons Page")}
                         </NavLink>
                     </li>
                     <li className="nav-item mb-2">
                         <NavLink to="/sinavlar" className="nav-link nav-button">
                             <FontAwesomeIcon icon={faFileLines} />
-                            Sınavlar
+                            {t("Exams Page")}
                         </NavLink>
                     </li>
                     <li className="nav-item mb-2">
                         <NavLink to="/kulupler" className="nav-link nav-button">
                             <FontAwesomeIcon icon={faUsers} />
-                            Kulüpler
+                            {t("Clubs Page")}
                         </NavLink>
                     </li>
                     <li className="nav-item mb-2">
                         <NavLink to="/hesap" className="nav-link nav-button">
                             <FontAwesomeIcon icon={faUser} />
-                            Hesap
+                            {t("Account Page")}
                         </NavLink>
                     </li>
                     <li className="nav-item mb-2">
@@ -84,7 +93,7 @@ function Sidebar() {
                             onClick={() => console.log("Oturumu Kapat")}
                         >
                             <FontAwesomeIcon icon={faSignOut} />
-                            Oturumu Kapat
+                            {t("Logout")}
                         </a>
                     </li>
                 </ul>
