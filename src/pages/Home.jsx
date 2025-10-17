@@ -3,7 +3,11 @@ import UpcomingEvents from "../components/UpcomingEvents";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser,faEnvelope,faChalkboardUser } from '@fortawesome/free-solid-svg-icons';
 
+import { useTranslation } from "react-i18next";
+
+
 function Home() {
+    const { t } = useTranslation();
     return (
         <div className={"container"}>
             <div className={'row'}>
@@ -15,7 +19,9 @@ function Home() {
                                 </div>
                                 <div className={'col-8'}>
                                     <h3>Bektaş Kara</h3>
-                                    <h5 className={"text-muted"}>Bilgisayar Mühendisliği</h5>
+                                    <h5 className={"text-muted"}>
+                                        {t("Computer Engineering")}
+                                    </h5>
                                     <div className={'user-information'}>
                                         <span className={"text-muted"}>
                                             <FontAwesomeIcon icon={faUser} />
