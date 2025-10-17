@@ -21,32 +21,61 @@ import {
 import { useTranslation } from "react-i18next";
 
 function GridMenu() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     return (
            <div className={'row'}>
                <div className={'col-12'}>
                    <div className={""}>
                        <div className={'col-12'}>
-                           <form onSubmit={e => e.preventDefault()}>
-                               <div className="mb-3 position-relative">
-                                   <FontAwesomeIcon
-                                       icon={faSearch}
-                                       className="position-absolute"
-                                       style={{
-                                           left: '15px',
-                                           top: '50%',
-                                           transform: 'translateY(-50%)',
-                                           color: '#6c757d',
-                                           pointerEvents: 'none'
-                                       }}
-                                   />
-                                   <input
-                                       type="text"
-                                       className="form-control ps-5"
-                                       placeholder={t("Search")+"..."}
-                                   />
+                           <div className={'row'}>
+                               <div className={'col-12 col-lg-9'}>
+                                   <form onSubmit={e => e.preventDefault()}>
+                                       <div className="mb-3 position-relative">
+                                           <FontAwesomeIcon
+                                               icon={faSearch}
+                                               className="position-absolute"
+                                               style={{
+                                                   left: '15px',
+                                                   top: '50%',
+                                                   transform: 'translateY(-50%)',
+                                                   color: '#6c757d',
+                                                   pointerEvents: 'none'
+                                               }}
+                                           />
+                                           <input
+                                               type="text"
+                                               className="form-control ps-5"
+                                               placeholder={t("Search")+"..."}
+                                           />
+                                       </div>
+                                   </form>
                                </div>
-                           </form>
+                               <div className={'col-12 col-lg-2'}>
+                                   <div className="dropdown">
+                                       <button style={{backgroundColor:"#f6f6f6",color:"black"}}
+                                           className="btn btn-secondary dropdown-toggle"
+                                           type="button"
+                                           id="languageDropdown"
+                                           data-bs-toggle="dropdown"
+                                           aria-expanded="false"
+                                       >
+                                           {i18n.language}
+                                       </button>
+                                       <ul className="dropdown-menu" aria-labelledby="languageDropdown">
+                                           <li>
+                                               <button className="dropdown-item" onClick={() => i18n.changeLanguage("en")}>
+                                                   English
+                                               </button>
+                                           </li>
+                                           <li>
+                                               <button className="dropdown-item" onClick={() => i18n.changeLanguage("tr")}>
+                                                   Türkçe
+                                               </button>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </div>
+                           </div>
                        </div>
                        <div className={'col-12'}>
                            <div id={'gno'} className="dashboard-card gno-card">
