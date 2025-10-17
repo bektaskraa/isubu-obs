@@ -8,6 +8,16 @@
   "Exams Page": "Exams",
   "Clubs Page": "Clubs",
   "Account Page": "Account",
-  "Logout": "Logout"
+  "Logout": "Logout",
 
+  "_title": "Action Menu",
+  "Search": "Search",
+  "General Grade Average": "General\nGrade\nAverage",
+  "Timetable": "Timetable",
+  "Homework": "Homework",
+  "Announcements": "Announcements",
+  "Email": "Email",
+  "LiveLesson": "Live Lesson",
+  "Absences": "Absences",
+  "Cafeteria": "Cafeteria"
 }

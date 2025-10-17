@@ -1,6 +1,10 @@
 import React from "react";
-import './GridMenu.css';
 import { NavLink } from 'react-router-dom';
+
+// Stylesheet
+import './GridMenu.css';
+
+// Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCalendar,
@@ -13,7 +17,11 @@ import {
     faSearch
 } from '@fortawesome/free-solid-svg-icons';
 
+// Localization
+import { useTranslation } from "react-i18next";
+
 function GridMenu() {
+    const { t } = useTranslation();
     return (
            <div className={'row'}>
                <div className={'col-12'}>
@@ -35,14 +43,16 @@ function GridMenu() {
                                    <input
                                        type="text"
                                        className="form-control ps-5"
-                                       placeholder="Ara..."
+                                       placeholder={t("Search")+"..."}
                                    />
                                </div>
                            </form>
                        </div>
                        <div className={'col-12'}>
                            <div id={'gno'} className="dashboard-card gno-card">
-                               <span>Genel<br/> Not<br/> Ortalaması<br/></span>
+                               <span style={{ whiteSpace: 'pre-line' }}>
+                                   {t("General Grade Average")}
+                               </span>
                                <h2 id={'gno-value'} >3.4</h2>
                            </div>
                        </div>
@@ -51,43 +61,43 @@ function GridMenu() {
                                <div className={'col-6'}>
                                    <div id={'timetable'} className="action-card">
                                        <FontAwesomeIcon icon={faCalendar} className="fa-icon" />
-                                       <span>Ders Prog.</span>
+                                       <span>{t("Timetable")}</span>
                                    </div>
                                </div>
                                <div className={'col-6'}>
                                    <div id={'homework'} className="action-card">
                                        <FontAwesomeIcon icon={faFileLines} className="fa-icon" />
-                                       <span>Ödevler</span>
+                                       <span>{t("Homework")}</span>
                                    </div>
                                </div>
                                <div className={'col-6'}>
                                    <div  id={'announcements'} className="action-card">
                                        <FontAwesomeIcon icon={faBullhorn} className="fa-icon" />
-                                       <span>Duyurular</span>
+                                       <span>{t("Announcements")}</span>
                                    </div>
                                </div>
                                <div className={'col-6'}>
                                    <div id={'email'} className="action-card">
                                        <FontAwesomeIcon icon={faEnvelope} className="fa-icon" />
-                                       <span>Eposta</span>
+                                       <span>{t("Email")}</span>
                                    </div>
                                </div>
                                <div className={'col-6'}>
-                                   <div id={'live'} className="action-card">
+                                   <div id={'liveLesson'} className="action-card">
                                        <FontAwesomeIcon icon={faVideo} className="fa-icon" />
-                                       <span>Canlı Ders</span>
+                                       <span>{t("LiveLesson")}</span>
                                    </div>
                                </div>
                                <div className={'col-6'}>
-                                   <div id={'discontinuity'} className="action-card">
+                                   <div id={'absences'} className="action-card">
                                        <FontAwesomeIcon icon={faCalendarXmark} className="fa-icon" />
-                                       <span>Devamsızlık</span>
+                                       <span>{t("Absences")}</span>
                                    </div>
                                </div>
                                <div className={'col-6'}>
-                                   <div id={'refectory'}  className="action-card">
+                                   <div id={'cafeteria'}  className="action-card">
                                        <FontAwesomeIcon icon={faUtensils} className="fa-icon" />
-                                       <span>Yemekhane</span>
+                                       <span>{t("Cafeteria")}</span>
                                    </div>
                                </div>
                            </div>

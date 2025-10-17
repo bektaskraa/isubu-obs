@@ -8,6 +8,17 @@
   "Exams Page": "Sınavlar",
   "Clubs Page": "Kulüpler",
   "Account Page": "Hesap",
-  "Logout": "Oturumu Kapat"
+  "Logout": "Oturumu Kapat",
+
+  "_title": "Action Menu",
+  "Search": "Ara",
+  "General Grade Average": "Genel\nNot\nOrtalaması",
+  "Timetable": "Program",
+  "Homework": "Ödevler",
+  "Announcements": "Duyurular",
+  "Email": "E-posta",
+  "LiveLesson": "Canlı Ders",
+  "Absences": "Devamsızlık",
+  "Cafeteria": "Yemekhane"
 
 }
