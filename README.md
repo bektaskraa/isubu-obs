@@ -1,5 +1,9 @@
 # 🎓 Öğrenci Bilgi Sistemi Tasarımı
 
+## 🚀 Canlı Demo
+**Bu projenin canlı yayındaki demosuna aşağıdaki adresten inceleyebilirsiniz:**
+[isubu-obs Canlı Demo](https://isubu-obs.vercel.app/)
+
 ## 💻 Proje Hakkında
 Merhabalar! Üniversite sonuçları belli olduğunda Isparta Uygulamalı Bilimler Üniversitesi Bilgisayar Mühendisliği'ni kazanmıştım. OBS, yani Öğrenci Bilgi Sistemi'ne giriş yaptığımda bir şok geçirdim; sistemi yapan kişinin CSS’den haberi yok diye yorumladım :D. Sistemin tasarımı salt metinden oluşuyordu, bu durum her şeyin yerinin karışmasına ve okunurluğun azalmasına yol açıyordu. Bende bu tasarımı daha göze hitap eden bir şekilde yenilemeyi düşündüm. Taslak tasarımları bana daha kolay geldiği için Canva ile yaptım; React ile de UX deneyimi iyi olan bir arabirim geliştireceğim.
 
