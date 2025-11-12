@@ -1,10 +1,12 @@
 import React from 'react';
-import UpcomingEvents from "../components/UpcomingEvents";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser,faEnvelope,faChalkboardUser } from '@fortawesome/free-solid-svg-icons';
-
 import { useTranslation } from "react-i18next";
 
+// Images
+import profileImage from '../assets/profile.jpg';
+
+// Icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser,faEnvelope,faChalkboardUser } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
     const { t } = useTranslation();
@@ -15,7 +17,7 @@ function Home() {
                     <div className={'isubu-card'}>
                             <div className={'row'}>
                                 <div className={'col-4'}>
-                                    <img className={'profile-picture'} src={'../../src/assets/profile.jpg'}/>
+                                    <img className={'profile-picture'} src={profileImage}/>
                                 </div>
                                 <div className={'col-8'}>
                                     <h3>Bektaş Kara</h3>
