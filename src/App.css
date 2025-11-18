@@ -5,6 +5,7 @@
     --color-placeholder: #f6f6f6;
     --color-main-light: #2c548f;
     --color-placeholder-dark: #e0e0e0;
+    -color-card-gray:#f6f6f6;
 }
 
 
@@ -77,4 +78,10 @@ h3 {
 
 .ders-accordion .card + .card {
     margin-top: 1rem;
+}
+
+.login-logo{
+    height: 20vmin;
+    display: flex;
+    justify-content: center;
 }

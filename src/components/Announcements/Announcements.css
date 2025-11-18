@@ -1,0 +1,18 @@
+.announcements {
+}
+.announcements .header {
+    padding: 8px;
+}
+
+.announcements .item{
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: var(--color-placeholder);
+}
+.announcements .item:hover{
+    background-color: var(--color-placeholder-dark);
+}
+.announcements .item h5{
+    font-weight:600;
+}

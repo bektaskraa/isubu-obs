@@ -8,6 +8,9 @@ import profileImage from '../assets/profile.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser,faEnvelope,faChalkboardUser } from '@fortawesome/free-solid-svg-icons';
 
+//Companents
+import Announcement from '../components/Announcements/Announcements.jsx';
+
 function Home() {
     const { t } = useTranslation();
     return (
@@ -43,6 +46,11 @@ function Home() {
                                 </div>
                             </div>
                     </div>
+                </div>
+            </div>
+            <div className={"row"}>
+                <div className={'col-12'}>
+                    <Announcement />
                 </div>
             </div>
         </div>
