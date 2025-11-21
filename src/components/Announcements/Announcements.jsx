@@ -41,7 +41,7 @@ function Announcements() {
                 </div>
             </div>
             {announcements.map(announcement => (
-                <div className={"item"}>
+                <div id={"announcement-"+announcement.id} className={"item"}>
                     <h5>{announcement.title}</h5>
                     <p>{announcement.content}</p>
                 </div>

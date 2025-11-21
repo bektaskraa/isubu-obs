@@ -8,10 +8,12 @@
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 10px;
-    background-color: var(--color-placeholder);
+    background-color:white;
+    border: 1px solid lightgray;
 }
 .announcements .item:hover{
     background-color: var(--color-placeholder-dark);
+    cursor: pointer;
 }
 .announcements .item h5{
     font-weight:600;

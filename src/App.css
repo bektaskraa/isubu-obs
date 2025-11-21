@@ -2,10 +2,10 @@
 
 :root {
     --color-main: #1c365e;
-    --color-placeholder: #f6f6f6;
+    --color-placeholder: #ffffff;
     --color-main-light: #2c548f;
     --color-placeholder-dark: #e0e0e0;
-    -color-card-gray:#f6f6f6;
+    --color-card-gray:#f6f6f6;
 }
 
 
@@ -17,14 +17,16 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
 }
 
 .isubu-button{
-    background-color: rgb(237, 237, 237);
+    background-color: rgb(255, 255, 255);
     color:black;
     border-radius: 10px;
     padding: 10px;
     border: none;
+
 }
 
 h3 {
@@ -42,12 +44,13 @@ h3 {
 }
 
 .isubu-card{
-    background-color: #f6f6f6;
+    background-color: #ffffff;
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05),
     0 1px 4px rgba(0, 0, 0, 0.03);
+    border: 1px solid lightgray;
 
     color: #333333;
 
