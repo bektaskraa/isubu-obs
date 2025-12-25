@@ -34,26 +34,100 @@ h3 {
     font-weight: 600;
 }
 
-.profile-picture{
+.profile-picture {
     width: 100%;
-    border-radius: 10px;
-}
-
-.user-information span a{
-    margin-left: 5px;
-}
-
-.isubu-card{
-    background-color: #ffffff;
+    height: 100%;
+    object-fit: cover;
     border-radius: 12px;
-    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.user-info-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-info-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.user-info-header h5 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.user-info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    background: #fcfcfc;
+    padding: 6px 12px;
+    border-radius: 10px;
+    border: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
+}
+
+.info-item:hover {
+    background: #ffffff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    border-color: var(--color-main-light);
+    transform: translateY(-1px);
+}
+
+.info-icon {
+    font-size: 1.1rem;
+    color: var(--color-main);
+    margin-right: 12px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.7rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.info-text {
+    font-size: 0.9rem;
+    color: #444;
+    font-weight: 500;
+}
+
+.advisor-link {
+    text-decoration: none;
+    color: var(--color-main);
+}
+
+.advisor-link:hover {
+    text-decoration: underline;
+}
+
+.isubu-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05),
-    0 1px 4px rgba(0, 0, 0, 0.03);
-    border: 1px solid lightgray;
-
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0,0,0,0.05);
     color: #333333;
-
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 

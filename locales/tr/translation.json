@@ -1,6 +1,8 @@
 {
   "_title": "Home",
   "Computer Engineering": "Bilgisayar Mühendisliği",
+  "Student Number": "Öğrenci Numarası",
+  "Advisor": "Danışman",
 
   "_title": "Sidebar",
   "Home Page": "Ana Sayfa",
@@ -19,6 +21,9 @@
   "Email": "E-posta",
   "LiveLesson": "Canlı Ders",
   "Absences": "Devamsızlık",
-  "Cafeteria": "Yemekhane"
-
+  "Cafeteria": "Yemekhane",
+  "See All": "Tümünü gör",
+  "maintenance": "Bakım",
+  "deadline": "Son Gün",
+  "info": "Bilgi"
 }

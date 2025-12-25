@@ -1,6 +1,8 @@
 {
   "_title": "Home",
   "Computer Engineering": "Computer Engineering",
+  "Student Number": "Student Number",
+  "Advisor": "Advisor",
 
   "_title": "Sidebar",
   "Home Page": "Home",
@@ -19,5 +21,9 @@
   "Email": "Email",
   "LiveLesson": "Live Lesson",
   "Absences": "Absences",
-  "Cafeteria": "Cafeteria"
+  "Cafeteria": "Cafeteria",
+  "See All": "See All",
+  "maintenance": "Maintenance",
+  "deadline": "Deadline",
+  "info": "Information"
 }

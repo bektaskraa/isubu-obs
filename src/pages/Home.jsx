@@ -19,29 +19,38 @@ function Home() {
                 <div className={'col-12'}>
                     <div className={'isubu-card'}>
                             <div className={'row'}>
-                                <div className={'col-4'}>
+                                <div className={'col-4 d-flex'}>
                                     <img className={'profile-picture'} src={profileImage}/>
                                 </div>
-                                <div className={'col-8'}>
-                                    <h3>Bektaş Kara</h3>
-                                    <h5 className={"text-muted"}>
-                                        {t("Computer Engineering")}
-                                    </h5>
-                                    <div className={'user-information'}>
-                                        <span className={"text-muted"}>
-                                            <FontAwesomeIcon icon={faUser} />
-                                            <a>24952875461</a>
-                                        </span>
-                                        <br/>
-                                        <span  className={"text-muted"}>
-                                            <FontAwesomeIcon icon={faEnvelope} />
-                                            <a>l24952875461@isparta.edu.tr</a>
-                                        </span>
-                                        <br/>
-                                        <span className={"text-muted"}>
-                                            <FontAwesomeIcon icon={faChalkboardUser} />
-                                            <a href={'#'}>Doç. Dr. Serap Ergün</a>
-                                        </span>
+                                <div className={'col-8 user-info-column'}>
+                                    <div className="user-info-header">
+                                        <h3>Bektaş Kara</h3>
+                                        <h5 className={"text-muted"}>
+                                            {t("Computer Engineering")}
+                                        </h5>
+                                    </div>
+                                    <div className={'user-info-grid'}>
+                                        <div className={'info-item'}>
+                                            <FontAwesomeIcon icon={faUser} className="info-icon" />
+                                            <div className="info-content">
+                                                <small className="info-label">{t("Student Number")}</small>
+                                                <span className="info-text">24952875461</span>
+                                            </div>
+                                        </div>
+                                        <div className={'info-item'}>
+                                            <FontAwesomeIcon icon={faEnvelope} className="info-icon" />
+                                            <div className="info-content">
+                                                <small className="info-label">{t("Email")}</small>
+                                                <span className="info-text">l24952875461@isparta.edu.tr</span>
+                                            </div>
+                                        </div>
+                                        <div className={'info-item'}>
+                                            <FontAwesomeIcon icon={faChalkboardUser} className="info-icon" />
+                                            <div className="info-content">
+                                                <small className="info-label">{t("Advisor")}</small>
+                                                <a href={'#'} className="info-text advisor-link">Doç. Dr. Serap Ergün</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
