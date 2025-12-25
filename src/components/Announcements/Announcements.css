@@ -1,20 +1,113 @@
-.announcements {
-}
-.announcements .header {
-    padding: 8px;
+.announcements-container {
+    margin-top: 10px;
 }
 
-.announcements .item{
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    background-color:white;
-    border: 1px solid lightgray;
+.announcements-header h3 {
+    color: var(--color-main);
+    font-size: 1.25rem;
+    font-weight: 700;
 }
-.announcements .item:hover{
-    background-color: var(--color-placeholder-dark);
-    cursor: pointer;
+
+.header-icon {
+    color: var(--color-main);
+    font-size: 1.2rem;
 }
-.announcements .item h5{
-    font-weight:600;
+
+.see-all-link {
+    color: var(--color-main-light);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.see-all-link:hover {
+    color: var(--color-main);
+    text-decoration: underline;
+}
+
+.announcement-item {
+    display: flex;
+    gap: 16px;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+
+.announcement-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    border-color: var(--color-main-light);
+}
+
+.announcement-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.announcement-icon {
+    font-size: 1.4rem;
+}
+
+/* Tip Bazlı Renklendirme */
+.announcement-item.maintenance .announcement-icon { color: #f39c12; }
+.announcement-item.maintenance .announcement-icon-wrapper { background: rgba(243, 156, 18, 0.1); }
+
+.announcement-item.deadline .announcement-icon { color: #e74c3c; }
+.announcement-item.deadline .announcement-icon-wrapper { background: rgba(231, 76, 60, 0.1); }
+
+.announcement-item.info .announcement-icon { color: #3498db; }
+.announcement-item.info .announcement-icon-wrapper { background: rgba(52, 152, 219, 0.1); }
+
+.announcement-content {
+    flex-grow: 1;
+}
+
+.announcement-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.announcement-date {
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: 500;
+}
+
+.announcement-badge {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.announcement-badge.maintenance { background: #fef5e7; color: #f39c12; }
+.announcement-badge.deadline { background: #fdedec; color: #e74c3c; }
+.announcement-badge.info { background: #ebf5fb; color: #3498db; }
+
+.announcement-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #2c3e50;
+}
+
+.announcement-text {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0;
+    line-height: 1.5;
 }
