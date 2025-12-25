@@ -4,7 +4,7 @@ import EdevletIcon from "../assets/edevletIcon.png";
 import "./Login.css";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faLock, faBullhorn, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faLock, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Announcements from '../components/Announcements/Announcements.jsx';
 
 function Login() {
