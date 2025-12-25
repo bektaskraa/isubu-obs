@@ -1,9 +1,6 @@
 import React from 'react';
 import { useTranslation } from "react-i18next";
 
-// Images
-import profileImage from '../assets/profile.jpg';
-
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser,faEnvelope,faChalkboardUser } from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +17,9 @@ function Home() {
                     <div className={'isubu-card'}>
                             <div className={'row'}>
                                 <div className={'col-4 d-flex'}>
-                                    <img className={'profile-picture'} src={profileImage}/>
+                                    <div className="profile-placeholder">
+                                        <FontAwesomeIcon icon={faUser} className="placeholder-icon" />
+                                    </div>
                                 </div>
                                 <div className={'col-8 user-info-column'}>
                                     <div className="user-info-header">

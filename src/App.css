@@ -34,12 +34,40 @@ h3 {
     font-weight: 600;
 }
 
-.profile-picture {
+.profile-picture, .profile-placeholder {
     width: 100%;
     height: 100%;
+    min-height: 180px;
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-placeholder {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.placeholder-icon {
+    font-size: 4rem;
+    color: var(--color-main-light);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.profile-placeholder:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    border-color: var(--color-main-light);
+}
+
+.profile-placeholder:hover .placeholder-icon {
+    transform: scale(1.1);
+    opacity: 0.8;
+    color: var(--color-main);
 }
 
 .user-info-column {
