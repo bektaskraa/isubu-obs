@@ -1,102 +1,129 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faUsers, faArrowRight, faHashtag } from "@fortawesome/free-solid-svg-icons";
+
+const CLUBS_DATA = [
+    {
+        id: 1,
+        title: "Bilişim Kulübü",
+        description: "Yenilikçi projeler geliştirir, teknolojiyi keşfeder, kod yazar ve geleceği şekillendiririz.",
+        category: "Computer"
+    },
+    {
+        id: 2,
+        title: "Yapay Zekâ Kulübü",
+        description: "Veriden zekâ üretiriz. Öğrenen algoritmalarla sınırları kaldırıyoruz!",
+        category: "Engineering"
+    },
+    {
+        id: 3,
+        title: "Robotik Kulübü",
+        description: "Motorlar döner, sensörler konuşur; biz makineleri hayata döndürürüz!",
+        category: "Engineering"
+    },
+    {
+        id: 4,
+        title: "Girişimcilik Kulübü",
+        description: "Fikirleri ürüne, hayalleri işe dönüştüren yaratıcı beyinleriz!",
+        category: "Engineering"
+    }
+];
 
 function Clubs() {
+    const { t } = useTranslation();
+    const [query, setQuery] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState("All");
+
+    const categories = ["All", "Computer", "Engineering", "Sport"];
+
+    const filteredClubs = CLUBS_DATA.filter(club => {
+        const matchesQuery = club.title.toLowerCase().includes(query.toLowerCase()) || 
+                           club.description.toLowerCase().includes(query.toLowerCase());
+        const matchesCategory = selectedCategory === "All" || club.category === selectedCategory;
+        return matchesQuery && matchesCategory;
+    });
+
     return (
-        <div className={"container"}>
-            <div className="row">
+        <div className="container">
+            <div className="row mb-4">
                 <div className="col-12">
-                    <h1>Kulüpler</h1>
-                    <h5>Kulüpleri keşfedin ve katılın</h5><br/>
-                </div>
-                <div className="col-12">
-                    <form onSubmit={e => e.preventDefault()}>
-                        <div className="form-floating mb-3">
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="floatingInput"
-                                placeholder="Adınız"
-                            />
-                            <label htmlFor="floatingInput">Klüplerde Ara...</label>
-                        </div>
-                    </form>
-                </div>
-                <div className="col-12">
-                    <input type="checkbox" className="btn-check" id="btn-check-4" autoComplete="off"/>
-                    <label className="btn" htmlFor="btn-check-4">Bilgisayar</label>
-
-                    <input type="checkbox" className="btn-check" id="btn-check-5"  autoComplete="off"/>
-                    <label className="btn" htmlFor="btn-check-5">Mühendislik</label>
-
-                    <input type="checkbox" className="btn-check" id="btn-check-6"  autoComplete="off"/>
-                    <label className="btn" htmlFor="btn-check-6">Spor</label>
-                </div>
-                <br/><br/>
-                <div className="col-12">
-                    <div className="row">
-                        <div className={'col-6'}>
-                            <div className={'isubu-card'}>
-                                <div className={'row'}>
-                                    <div className={'col-12'}>
-                                        <h4>Bilişim Kulübü</h4>
-                                    </div>
-                                    <div className={'col-12'}>
-                                        <p>Yenilikçi projeler geliştirir, teknolojiyi keşfeder, kod yazar ve geleceği şekillendiririz.</p>
-                                    </div>
-                                    <div className={'col-12'}>
-                                        <button className={"isubu-button"} style={{width:"100%"}} >Kulüp Detayları</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={'col-6'}>
-                            <div className={'isubu-card'}>
-                                <div className={'row'}>
-                                    <div className={'col-12'}>
-                                        <h4>Yapay Zekâ Kulübü</h4>
-                                    </div>
-                                    <div className={'col-12'}>
-                                        <p>Veriden zekâ üretiriz. Öğrenen algoritmalarla sınırları kaldırıyoruz!</p>
-                                    </div>
-                                    <div className={'col-12'}>
-                                        <button className={"isubu-button"} style={{width:"100%"}} >Kulüp Detayları</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={'col-6'}>
-                            <div className={'isubu-card'}>
-                                <div className={'row'}>
-                                    <div className={'col-12'}>
-                                        <h4>Robotik Kulübü</h4>
-                                    </div>
-                                    <div className={'col-12'}>
-                                        <p>Motorlar döner, sensörler konuşur; biz makineleri hayata döndürürüz!</p>
-                                    </div>
-                                    <div className={'col-12'}>
-                                        <button className={"isubu-button"} style={{width:"100%"}} >Kulüp Detayları</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={'col-6'}>
-                            <div className={'isubu-card'}>
-                                <div className={'row'}>
-                                    <div className={'col-12'}>
-                                        <h4>Girişimcilik Kulübü</h4>
-                                    </div>
-                                    <div className={'col-12'}>
-                                        <p>Fikirleri ürüne, hayalleri işe dönüştüren yaratıcı beyinleriz!</p>
-                                    </div>
-                                    <div className={'col-12'}>
-                                        <button className={"isubu-button"} style={{width:"100%"}} >Kulüp Detayları</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div className="page-header">
+                        <h1>{t("Clubs Page")}</h1>
+                        <p className="page-description">{t("Clubs Description")}</p>
                     </div>
                 </div>
+            </div>
+
+            <div className="row mb-4">
+                <div className="col-12">
+                    <div className="search-form-wrapper">
+                        <div className="search-input-container">
+                            <input
+                                type="text"
+                                className="modern-search-input"
+                                placeholder={t("Search Clubs") + "..."}
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                            />
+                            <div className="search-icon-wrapper">
+                                <FontAwesomeIcon icon={faSearch} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="row mb-4">
+                <div className="col-12">
+                    <div className="nav nav-pills category-pills">
+                        {categories.map(cat => (
+                            <div key={cat} className="nav-item me-2">
+                                <button 
+                                    className={`nav-link ${selectedCategory === cat ? 'active' : ''}`}
+                                    onClick={() => setSelectedCategory(cat)}
+                                >
+                                    {cat === "All" ? t("All") || "Hepsi" : t(cat)}
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            <div className="row">
+                {filteredClubs.length === 0 ? (
+                    <div className="col-12">
+                        <p className="text-muted">{t("No results found") || "Sonuç bulunamadı"}</p>
+                    </div>
+                ) : (
+                    filteredClubs.map(club => (
+                        <div key={club.id} className="col-md-6 mb-4">
+                            <div className="isubu-card club-card h-100">
+                                <div className="club-card-content">
+                                    <div className="club-icon-wrapper mb-3">
+                                        <FontAwesomeIcon icon={faUsers} />
+                                    </div>
+                                    <div className="club-info">
+                                        <div className="d-flex justify-content-between align-items-start mb-2">
+                                            <h4>{club.title}</h4>
+                                            <span className="club-category-badge">
+                                                <FontAwesomeIcon icon={faHashtag} className="me-1" />
+                                                {t(club.category)}
+                                            </span>
+                                        </div>
+                                        <p className="club-description">{club.description}</p>
+                                    </div>
+                                    <div className="mt-auto">
+                                        <button className="btn-action w-100 mt-3">
+                                            {t("Club Details")} <FontAwesomeIcon icon={faArrowRight} className="ms-2" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                )}
             </div>
         </div>
     );
