@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
     faFileAlt, 
     faChevronRight,
-    faChartBar
 } from "@fortawesome/free-solid-svg-icons";
 
 function AllExamsModal({ lesson, onClose, onSelectExam }) {

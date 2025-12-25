@@ -17,6 +17,7 @@ import { useTranslation } from "react-i18next";
 
 import ExamDetailsModal from '../modals/ExamDetailsModal';
 import AllExamsModal from '../modals/AllExamsModal';
+import LessonDocumentsModal from '../modals/LessonDocumentsModal';
 
 const lessons = [
     {
@@ -83,7 +84,12 @@ const lessons = [
         akts: 5,
         hour: 4,
         absences: 2,
-        grade: 'AA'
+        grade: 'AA',
+        documents: [
+            { id: 1, name: "Ders Sunumu - Hafta 1", type: "pdf", size: "2.4 MB", date: "20.09.2025" },
+            { id: 2, name: "Algoritma Örnekleri", type: "zip", size: "15.8 MB", date: "25.09.2025" },
+            { id: 3, name: "Ders Kaydı - Döngüler", type: "mp4", size: "120 MB", date: "01.10.2025" }
+        ]
     }, {
         title: 'Bilgisayar Mühendisliğine Giriş',
         code: "BLG-113",
@@ -126,7 +132,11 @@ const lessons = [
         akts: 3,
         hour: 2,
         absences: 0,
-        grade: 'BA'
+        grade: 'BA',
+        documents: [
+            { id: 1, name: "Mühendislik Etiği", type: "pdf", size: "1.1 MB", date: "15.09.2025" },
+            { id: 2, name: "Tanıtım Videosu", type: "mp4", size: "45 MB", date: "16.09.2025" }
+        ]
     }, {
         title: 'Bilişim Teknolojilerinin Temelleri',
         code: "BLG-115",
@@ -169,7 +179,11 @@ const lessons = [
         akts: 3,
         hour: 2,
         absences: 4,
-        grade: 'CB'
+        grade: 'CB',
+        documents: [
+            { id: 1, name: "Donanım Temelleri", type: "pdf", size: "3.2 MB", date: "10.09.2025" },
+            { id: 2, name: "Ses Kaydı - Donanım", type: "mp3", size: "12 MB", date: "11.09.2025" }
+        ]
     }, {
         title: 'İngilizce I (Hazırlık Eğitimine Tabi Olmayan Öğrenciler İçin)',
         code: "ING-101",
@@ -212,7 +226,11 @@ const lessons = [
         akts: 3,
         hour: 2,
         absences: 0,
-        grade: 'AA'
+        grade: 'AA',
+        documents: [
+            { id: 1, name: "Grammar Rules", type: "pdf", size: "0.8 MB", date: "05.09.2025" },
+            { id: 2, name: "Listening Exercise", type: "mp3", size: "8 MB", date: "06.09.2025" }
+        ]
     },
 ];
 
@@ -223,6 +241,7 @@ function Lessons() {
     const [filtered, setFiltered] = useState([]);
     const [selectedExam, setSelectedExam] = useState(null);
     const [selectedLessonForExams, setSelectedLessonForExams] = useState(null);
+    const [selectedLessonForDocuments, setSelectedLessonForDocuments] = useState(null);
 
     useEffect(() => {
         setFiltered(lessons);
@@ -249,6 +268,10 @@ function Lessons() {
 
     const handleOpenResults = (lesson) => {
         setSelectedLessonForExams(lesson);
+    };
+
+    const handleOpenDocuments = (lesson) => {
+        setSelectedLessonForDocuments(lesson);
     };
 
     const handleOpenSingleExam = (examData) => {
@@ -416,7 +439,7 @@ function Lessons() {
                                                             </div>
 
                                                             <div className="lesson-actions mt-4">
-                                                                <button type="button" className="btn btn-action">
+                                                                <button type="button" className="btn btn-action" onClick={() => handleOpenDocuments(lesson)}>
                                                                     <FontAwesomeIcon icon={faFileAlt} className="me-2" /> {t("Documents")}
                                                                 </button>
                                                                 <button type="button" className="btn btn-action" onClick={() => handleOpenResults(lesson)}>
@@ -476,6 +499,12 @@ function Lessons() {
             </div>
             {/* Exam Details Modal */}
             <ExamDetailsModal exam={selectedExam} onClose={() => setSelectedExam(null)} />
+
+            {/* Lesson Documents Modal */}
+            <LessonDocumentsModal 
+                lesson={selectedLessonForDocuments} 
+                onClose={() => setSelectedLessonForDocuments(null)} 
+            />
 
             {/* All Exams Modal */}
             <AllExamsModal 
