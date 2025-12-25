@@ -401,6 +401,87 @@ h3 {
     animation: modalAppear 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* All Exams Modal Styling */
+.all-exams-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.all-exams-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.all-exams-item:hover {
+    background: white;
+    border-color: var(--color-main-light);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.exam-item-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(28, 54, 94, 0.05);
+    color: var(--color-main);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-right: 16px;
+}
+
+.exam-item-info {
+    flex-grow: 1;
+}
+
+.exam-item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.exam-item-type {
+    font-weight: 700;
+    color: #333;
+    font-size: 1rem;
+}
+
+.exam-item-score {
+    font-weight: 800;
+    color: var(--color-main);
+    background: rgba(28, 54, 94, 0.1);
+    padding: 2px 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.exam-item-date {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 500;
+}
+
+.exam-item-action {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.all-exams-item:hover .exam-item-action {
+    color: var(--color-main);
+    transform: translateX(3px);
+}
+
 @keyframes modalAppear {
     from { transform: scale(0.9); opacity: 0; }
     to { transform: scale(1); opacity: 1; }

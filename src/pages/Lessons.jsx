@@ -10,11 +10,13 @@ import {
     faFileAlt,
     faPoll,
     faTasks,
-    faLayerGroup,
     faCalendarXmark,
     faCheckCircle
 } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
+
+import ExamDetailsModal from '../modals/ExamDetailsModal';
+import AllExamsModal from '../modals/AllExamsModal';
 
 const lessons = [
     {
@@ -22,9 +24,60 @@ const lessons = [
         code: "BLG-111",
         days: 'Pazartesi, Çarşamba',
         exams: { 
-            'Vize 1': { date: "03.11.2025", score: 85 }, 
-            'Vize 2': { date: "11.12.2025", score: 70 }, 
-            'Final': { date: "12.01.2026", score: 90 } 
+            'Vize 1': { 
+                date: "03.11.2025", 
+                score: 85,
+                results: {
+                    score: 85,
+                    average: 68.5,
+                    highest: 95,
+                    lowest: 20,
+                    participants: 45,
+                    nonParticipants: 2,
+                    questionScores: [
+                        { question: 1, score: 20, maxScore: 20 },
+                        { question: 2, score: 15, maxScore: 20 },
+                        { question: 3, score: 20, maxScore: 20 },
+                        { question: 4, score: 10, maxScore: 20 },
+                        { question: 5, score: 20, maxScore: 20 }
+                    ]
+                }
+            }, 
+            'Vize 2': { 
+                date: "11.12.2025", 
+                score: 70,
+                results: {
+                    score: 70,
+                    average: 65.0,
+                    highest: 100,
+                    lowest: 30,
+                    participants: 44,
+                    nonParticipants: 3,
+                    questionScores: [
+                        { question: 1, score: 15, maxScore: 25 },
+                        { question: 2, score: 20, maxScore: 25 },
+                        { question: 3, score: 25, maxScore: 25 },
+                        { question: 4, score: 10, maxScore: 25 }
+                    ]
+                }
+            }, 
+            'Final': { 
+                date: "12.01.2026", 
+                score: 90,
+                results: {
+                    score: 90,
+                    average: 72.4,
+                    highest: 100,
+                    lowest: 40,
+                    participants: 46,
+                    nonParticipants: 1,
+                    questionScores: [
+                        { question: 1, score: 30, maxScore: 30 },
+                        { question: 2, score: 30, maxScore: 30 },
+                        { question: 3, score: 30, maxScore: 40 }
+                    ]
+                }
+            } 
         },
         teacher: 'Prof. Dr. Tuncay Aydoğan',
         akts: 5,
@@ -36,8 +89,38 @@ const lessons = [
         code: "BLG-113",
         days: 'Perşembe',
         exams: { 
-            'Vize 1': { date: "04.11.2025", score: 95 }, 
-            'Final': { date: "12.01.2026", score: 80 } 
+            'Vize 1': { 
+                date: "04.11.2025", 
+                score: 95,
+                results: {
+                    score: 95,
+                    average: 75.2,
+                    highest: 100,
+                    lowest: 50,
+                    participants: 50,
+                    nonParticipants: 0,
+                    questionScores: [
+                        { question: 1, score: 50, maxScore: 50 },
+                        { question: 2, score: 45, maxScore: 50 }
+                    ]
+                }
+            }, 
+            'Final': { 
+                date: "12.01.2026", 
+                score: 80,
+                results: {
+                    score: 80,
+                    average: 68.0,
+                    highest: 95,
+                    lowest: 35,
+                    participants: 49,
+                    nonParticipants: 1,
+                    questionScores: [
+                        { question: 1, score: 40, maxScore: 50 },
+                        { question: 2, score: 40, maxScore: 50 }
+                    ]
+                }
+            } 
         },
         teacher: 'Doç Dr. Serep Ergün',
         akts: 3,
@@ -49,8 +132,38 @@ const lessons = [
         code: "BLG-115",
         days: 'Salı',
         exams: { 
-            'Vize 1': { date: "04.11.2025", score: 60 }, 
-            'Final': { date: "12.01.2026", score: 75 } 
+            'Vize 1': { 
+                date: "04.11.2025", 
+                score: 60,
+                results: {
+                    score: 60,
+                    average: 55.4,
+                    highest: 90,
+                    lowest: 10,
+                    participants: 40,
+                    nonParticipants: 5,
+                    questionScores: [
+                        { question: 1, score: 30, maxScore: 50 },
+                        { question: 2, score: 30, maxScore: 50 }
+                    ]
+                }
+            }, 
+            'Final': { 
+                date: "12.01.2026", 
+                score: 75,
+                results: {
+                    score: 75,
+                    average: 60.2,
+                    highest: 95,
+                    lowest: 25,
+                    participants: 42,
+                    nonParticipants: 3,
+                    questionScores: [
+                        { question: 1, score: 35, maxScore: 50 },
+                        { question: 2, score: 40, maxScore: 50 }
+                    ]
+                }
+            } 
         },
         teacher: 'Doç Dr. Serep Ergün',
         akts: 3,
@@ -62,8 +175,38 @@ const lessons = [
         code: "ING-101",
         days: 'Salı',
         exams: { 
-            'Vize 1': { date: "04.11.2025", score: 100 }, 
-            'Final': { date: "12.01.2026", score: 95 } 
+            'Vize 1': { 
+                date: "04.11.2025", 
+                score: 100,
+                results: {
+                    score: 100,
+                    average: 82.1,
+                    highest: 100,
+                    lowest: 40,
+                    participants: 55,
+                    nonParticipants: 0,
+                    questionScores: [
+                        { question: 1, score: 50, maxScore: 50 },
+                        { question: 2, score: 50, maxScore: 50 }
+                    ]
+                }
+            }, 
+            'Final': { 
+                date: "12.01.2026", 
+                score: 95,
+                results: {
+                    score: 95,
+                    average: 85.4,
+                    highest: 100,
+                    lowest: 45,
+                    participants: 54,
+                    nonParticipants: 1,
+                    questionScores: [
+                        { question: 1, score: 45, maxScore: 50 },
+                        { question: 2, score: 50, maxScore: 50 }
+                    ]
+                }
+            } 
         },
         teacher: 'Doç Dr. Serep Ergün',
         akts: 3,
@@ -78,6 +221,8 @@ function Lessons() {
     const [openIndex, setOpenIndex] = useState(null);
     const [query, setQuery] = useState("");
     const [filtered, setFiltered] = useState([]);
+    const [selectedExam, setSelectedExam] = useState(null);
+    const [selectedLessonForExams, setSelectedLessonForExams] = useState(null);
 
     useEffect(() => {
         setFiltered(lessons);
@@ -100,6 +245,14 @@ function Lessons() {
 
     const toggle = (index) => {
         setOpenIndex(openIndex === index ? null : index);
+    };
+
+    const handleOpenResults = (lesson) => {
+        setSelectedLessonForExams(lesson);
+    };
+
+    const handleOpenSingleExam = (examData) => {
+        setSelectedExam(examData);
     };
 
     return (
@@ -241,9 +394,19 @@ function Lessons() {
                                                                 <h6><FontAwesomeIcon icon={faBook} className="me-2 text-main" /> {t("Exams")}</h6>
                                                                 <div className="exams-flex mt-2">
                                                                     {Object.entries(lesson.exams).map(([examName, details]) => (
-                                                                        <div key={examName} className="exam-card">
+                                                                        <div 
+                                                                            key={examName} 
+                                                                            className="exam-card"
+                                                                            style={{ cursor: 'pointer' }}
+                                                                            onClick={() => handleOpenSingleExam({
+                                                                                title: lesson.title,
+                                                                                code: lesson.code,
+                                                                                type: examName,
+                                                                                results: details.results
+                                                                            })}
+                                                                        >
                                                                             <div className="d-flex justify-content-between align-items-start mb-1">
-                                                                                <span className="exam-name">{examName}</span>
+                                                                                <span className="exam-name">{t(examName)}</span>
                                                                                 <span className="exam-score">{details.score}</span>
                                                                             </div>
                                                                             <span className="exam-date">{details.date}</span>
@@ -256,7 +419,7 @@ function Lessons() {
                                                                 <button type="button" className="btn btn-action">
                                                                     <FontAwesomeIcon icon={faFileAlt} className="me-2" /> {t("Documents")}
                                                                 </button>
-                                                                <button type="button" className="btn btn-action">
+                                                                <button type="button" className="btn btn-action" onClick={() => handleOpenResults(lesson)}>
                                                                     <FontAwesomeIcon icon={faPoll} className="me-2" /> {t("Exam Results")}
                                                                 </button>
                                                                 <button type="button" className="btn btn-action">
@@ -311,6 +474,18 @@ function Lessons() {
                     </div>
                 </div>
             </div>
+            {/* Exam Details Modal */}
+            <ExamDetailsModal exam={selectedExam} onClose={() => setSelectedExam(null)} />
+
+            {/* All Exams Modal */}
+            <AllExamsModal 
+                lesson={selectedLessonForExams} 
+                onClose={() => setSelectedLessonForExams(null)}
+                onSelectExam={(examData) => {
+                    setSelectedLessonForExams(null);
+                    setSelectedExam(examData);
+                }}
+            />
         </div>
     );
 }

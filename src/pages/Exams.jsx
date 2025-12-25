@@ -10,6 +10,8 @@ import {
     faFileSignature 
 } from "@fortawesome/free-solid-svg-icons";
 
+import ExamDetailsModal from '../modals/ExamDetailsModal';
+
 const EXAMS_DATA = [
     {
         id: 1,
@@ -208,81 +210,7 @@ function Exams() {
             </div>
 
             {/* Exam Details Modal */}
-            {selectedExam && (
-                <div className="modal-overlay" onClick={handleCloseModal}>
-                    <div className="modal-content-modern" onClick={e => e.stopPropagation()}>
-                        <div className="modal-header-modern">
-                            <div>
-                                <h5 className="mb-0">{selectedExam.title}</h5>
-                                <small className="text-muted">{selectedExam.code} - {t(selectedExam.type)}</small>
-                            </div>
-                            <button className="btn-close-modern" onClick={handleCloseModal}>&times;</button>
-                        </div>
-                        <div className="modal-body-modern">
-                            {selectedExam.results ? (
-                                <>
-                                    <div className="exam-stats-grid">
-                                        <div className="stat-card main-stat">
-                                            <small>{t("Your Score")}</small>
-                                            <h3>{selectedExam.results.score}</h3>
-                                        </div>
-                                        <div className="stat-card">
-                                            <small>{t("Average")}</small>
-                                            <span>{selectedExam.results.average}</span>
-                                        </div>
-                                        <div className="stat-card">
-                                            <small>{t("Highest Grade")}</small>
-                                            <span>{selectedExam.results.highest}</span>
-                                        </div>
-                                        <div className="stat-card">
-                                            <small>{t("Lowest Grade")}</small>
-                                            <span>{selectedExam.results.lowest}</span>
-                                        </div>
-                                        <div className="stat-card">
-                                            <small>{t("Participants")}</small>
-                                            <span>{selectedExam.results.participants}</span>
-                                        </div>
-                                        <div className="stat-card">
-                                            <small>{t("Non-participants")}</small>
-                                            <span>{selectedExam.results.nonParticipants}</span>
-                                        </div>
-                                    </div>
-
-                                    {selectedExam.results.questionScores && (
-                                        <div className="question-scores-section mt-4">
-                                            <h6 className="section-title mb-3">
-                                                <FontAwesomeIcon icon={faFileSignature} className="me-2 text-main" />
-                                                {t("Question Based Scores")}
-                                            </h6>
-                                            <div className="question-grid">
-                                                {selectedExam.results.questionScores.map((q, idx) => (
-                                                    <div key={idx} className="question-item">
-                                                        <div className="question-info">
-                                                            <span className="q-number">{t("Question")} {q.question}</span>
-                                                            <span className="q-points">{q.score} / {q.maxScore}</span>
-                                                        </div>
-                                                        <div className="q-progress-bg">
-                                                            <div 
-                                                                className="q-progress-fill" 
-                                                                style={{ width: `${(q.score / q.maxScore) * 100}%` }}
-                                                            ></div>
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    )}
-                                </>
-                            ) : (
-                                <div className="text-center py-4">
-                                    <FontAwesomeIcon icon={faCalendarCheck} className="mb-3 text-muted" style={{fontSize: '3rem'}} />
-                                    <p className="text-muted">{t("Exam results not yet announced")}</p>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            )}
+            <ExamDetailsModal exam={selectedExam} onClose={handleCloseModal} />
         </div>
     );
 }
