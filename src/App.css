@@ -157,6 +157,174 @@ h3 {
     margin-top: 1rem;
 }
 
+/* Lesson Details Styling */
+.lesson-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+@media (max-width: 992px) {
+    .lesson-details-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .lesson-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lesson-detail-item {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    transition: all 0.2s;
+}
+
+.lesson-detail-item:hover {
+    background: #fff;
+    border-color: var(--color-main-light);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.detail-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(28, 54, 94, 0.05);
+    color: var(--color-main);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-right: 12px;
+}
+
+.detail-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-info small {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.detail-info span, .detail-info a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+}
+
+.detail-info a:hover {
+    color: var(--color-main-light);
+    text-decoration: underline;
+}
+
+.text-main {
+    color: var(--color-main);
+}
+
+.exams-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.exam-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.exam-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-main);
+}
+
+.exam-date {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.lesson-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-action {
+    flex: 1;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.btn-action:hover {
+    background: var(--color-main);
+    color: white;
+    border-color: var(--color-main);
+    transform: translateY(-2px);
+}
+
+/* Accordion Animation */
+.accordion-collapse {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.accordion-button {
+    transition: all 0.3s ease;
+    border-radius: 12px !important;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgba(28, 54, 94, 0.05);
+    color: var(--color-main);
+    box-shadow: none;
+}
+
+.accordion-item {
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    margin-bottom: 15px;
+    border-radius: 12px !important;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.accordion-item:has(.accordion-button:not(.collapsed)) {
+    border-color: var(--color-main) !important;
+    box-shadow: 0 4px 20px rgba(28, 54, 94, 0.08);
+}
+
+.accordion-item:hover {
+    border-color: var(--color-main-light);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
 .login-logo{
     height: 20vmin;
     display: flex;

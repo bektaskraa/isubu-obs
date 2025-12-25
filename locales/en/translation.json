@@ -25,5 +25,19 @@
   "See All": "See All",
   "maintenance": "Maintenance",
   "deadline": "Deadline",
-  "info": "Information"
+  "info": "Information",
+  "Lesson Days": "Lesson Days",
+  "Teacher": "Teacher",
+  "AKTS": "ECTS",
+  "Weekly Hours": "Weekly Hours",
+  "Hours": "Hours",
+  "Exams": "Exams",
+  "Documents": "Documents",
+  "Exam Results": "Exam Results",
+  "Homeworks": "Homeworks",
+  "Semester": "Semester",
+  "Course Type": "Course Type",
+  "Compulsory": "Compulsory",
+  "Elective": "Elective",
+  "1. Semester": "1st Semester"
 }
