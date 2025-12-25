@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 // Stylesheet
 import './GridMenu.css';
@@ -16,7 +16,15 @@ import {
     faFileLines,
     faSearch,
     faGlobe,
-    faGraduationCap
+    faGraduationCap,
+    faScroll,
+    faFileSignature,
+    faBookOpen,
+    faCalendarCheck,
+    faExclamationCircle,
+    faPlusCircle,
+    faCalendarAlt,
+    faInfoCircle
 } from '@fortawesome/free-solid-svg-icons';
 
 // Localization
@@ -24,6 +32,53 @@ import { useTranslation } from "react-i18next";
 
 function GridMenu() {
     const { t, i18n } = useTranslation();
+    const location = useLocation();
+
+    // Sayfa bazlı aksiyon konfigürasyonları
+    const getActionsByPath = () => {
+        switch (location.pathname) {
+            case '/':
+                return [
+                    { id: 'timetable', icon: faCalendar, label: t("Timetable") },
+                    { id: 'homework', icon: faFileLines, label: t("Homework") },
+                    { id: 'announcements', icon: faBullhorn, label: t("Announcements") },
+                    { id: 'email', icon: faEnvelope, label: t("Email") },
+                    { id: 'liveLesson', icon: faVideo, label: t("LiveLesson") },
+                    { id: 'absences', icon: faCalendarXmark, label: t("Absences") },
+                    { id: 'cafeteria', icon: faUtensils, label: t("Cafeteria") }
+                ];
+            case '/dersler':
+                return [
+                    { id: 'homework', icon: faFileLines, label: t("Homework") },
+                    { id: 'transcript', icon: faScroll, label: t("Transcript") },
+                    { id: 'registration', icon: faFileSignature, label: t("Course Registration") },
+                    { id: 'syllabus', icon: faBookOpen, label: t("Syllabus") },
+                    { id: 'timetable', icon: faCalendar, label: t("Timetable") },
+                    { id: 'absences', icon: faCalendarXmark, label: t("Absences") }
+                ];
+            case '/sinavlar':
+                return [
+                    { id: 'exam-schedule', icon: faCalendarCheck, label: t("Exam Schedule") },
+                    { id: 'objection', icon: faExclamationCircle, label: t("Grade Objection") },
+                    { id: 'gpa-calculator', icon: faGraduationCap, label: t("GPA Calculator") }
+                ];
+            case '/kulupler':
+                return [
+                    { id: 'create-club', icon: faPlusCircle, label: t("Create Club") },
+                    { id: 'my-clubs', icon: faFileLines, label: t("My Memberships") },
+                    { id: 'club-events', icon: faCalendarAlt, label: t("Event Calendar") },
+                    { id: 'club-info', icon: faInfoCircle, label: t("Club Rules") }
+                ];
+            default:
+                return [
+                    { id: 'timetable', icon: faCalendar, label: t("Timetable") },
+                    { id: 'announcements', icon: faBullhorn, label: t("Announcements") }
+                ];
+        }
+    };
+
+    const actions = getActionsByPath();
+
     return (
            <div className={'row'}>
                <div className={'col-12'}>
@@ -100,64 +155,19 @@ function GridMenu() {
                                </div>
                            </div>
                        </div>
+
                        <div className={'col-12'}>
                            <div className={'row'}>
-                               <div className={'col-6'}>
-                                   <div id={'timetable'} className="action-card">
-                                       <div className="action-icon-wrapper">
-                                           <FontAwesomeIcon icon={faCalendar} />
+                               {actions.map(action => (
+                                   <div key={action.id} className={'col-6'}>
+                                       <div id={action.id} className="action-card">
+                                           <div className="action-icon-wrapper">
+                                               <FontAwesomeIcon icon={action.icon} />
+                                           </div>
+                                           <span>{action.label}</span>
                                        </div>
-                                       <span>{t("Timetable")}</span>
                                    </div>
-                               </div>
-                               <div className={'col-6'}>
-                                   <div id={'homework'} className="action-card">
-                                       <div className="action-icon-wrapper">
-                                           <FontAwesomeIcon icon={faFileLines} />
-                                       </div>
-                                       <span>{t("Homework")}</span>
-                                   </div>
-                               </div>
-                               <div className={'col-6'}>
-                                   <div  id={'announcements'} className="action-card">
-                                       <div className="action-icon-wrapper">
-                                           <FontAwesomeIcon icon={faBullhorn} />
-                                       </div>
-                                       <span>{t("Announcements")}</span>
-                                   </div>
-                               </div>
-                               <div className={'col-6'}>
-                                   <div id={'email'} className="action-card">
-                                       <div className="action-icon-wrapper">
-                                           <FontAwesomeIcon icon={faEnvelope} />
-                                       </div>
-                                       <span>{t("Email")}</span>
-                                   </div>
-                               </div>
-                               <div className={'col-6'}>
-                                   <div id={'liveLesson'} className="action-card">
-                                       <div className="action-icon-wrapper">
-                                           <FontAwesomeIcon icon={faVideo} />
-                                       </div>
-                                       <span>{t("LiveLesson")}</span>
-                                   </div>
-                               </div>
-                               <div className={'col-6'}>
-                                   <div id={'absences'} className="action-card">
-                                       <div className="action-icon-wrapper">
-                                           <FontAwesomeIcon icon={faCalendarXmark} />
-                                       </div>
-                                       <span>{t("Absences")}</span>
-                                   </div>
-                               </div>
-                               <div className={'col-6'}>
-                                   <div id={'cafeteria'}  className="action-card">
-                                       <div className="action-icon-wrapper">
-                                           <FontAwesomeIcon icon={faUtensils} />
-                                       </div>
-                                       <span>{t("Cafeteria")}</span>
-                                   </div>
-                               </div>
+                               ))}
                            </div>
                        </div>
                    </div>
