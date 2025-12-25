@@ -39,5 +39,18 @@
   "Course Type": "Ders Türü",
   "Compulsory": "Zorunlu",
   "Elective": "Seçmeli",
-  "1. Semester": "1. Dönem"
+  "1. Semester": "1. Dönem",
+  "ISUBU OBS": "ISUBU Öğrenci Bilgi Sistemi",
+  "Login Welcome Text": "Önlisans-Lisans Öğrenci Bilgi sistemine hoş geldiniz. Sistemi kullanabilmeniz için öncelikle sisteme giriş yapmanız gerekmektedir.",
+  "Welcome Back": "Tekrar Hoş Geldiniz",
+  "Please enter your details": "Lütfen giriş bilgilerinizi giriniz",
+  "Enter your student number": "Öğrenci numaranızı giriniz",
+  "Enter your password": "Şifrenizi giriniz",
+  "Password": "Şifre",
+  "Remember me": "Beni Hatırla",
+  "Forgot Password?": "Şifremi Unuttum",
+  "Login Now": "Şimdi Giriş Yap",
+  "Login with e-Government": "e-Devlet ile Giriş",
+  "Learn Student Number": "Öğrenci No Öğren",
+  "Support": "Destek"
 }

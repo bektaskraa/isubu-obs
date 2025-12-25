@@ -39,5 +39,18 @@
   "Course Type": "Course Type",
   "Compulsory": "Compulsory",
   "Elective": "Elective",
-  "1. Semester": "1st Semester"
+  "1. Semester": "1st Semester",
+  "ISUBU OBS": "ISUBU Student Information System",
+  "Login Welcome Text": "Welcome to the Associate Degree-Undergraduate Student Information System. You must log in to the system first.",
+  "Welcome Back": "Welcome Back",
+  "Please enter your details": "Please enter your details",
+  "Enter your student number": "Enter your student number",
+  "Enter your password": "Enter your password",
+  "Password": "Password",
+  "Remember me": "Remember me",
+  "Forgot Password?": "Forgot Password?",
+  "Login Now": "Login Now",
+  "Login with e-Government": "Login with e-Government",
+  "Learn Student Number": "Learn Student Number",
+  "Support": "Support"
 }
