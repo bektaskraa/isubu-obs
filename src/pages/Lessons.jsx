@@ -11,7 +11,8 @@ import {
     faPoll,
     faTasks,
     faLayerGroup,
-    faCertificate
+    faCalendarXmark,
+    faCheckCircle
 } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 
@@ -20,42 +21,55 @@ const lessons = [
         title: 'Algoritma ve Programlamaya Giriş',
         code: "BLG-111",
         days: 'Pazartesi, Çarşamba',
-        exams: { 'Vize 1': "03.11.2025", 'Vize 2': "11.12.2025", 'Final': "12.01.2026" },
+        exams: { 
+            'Vize 1': { date: "03.11.2025", score: 85 }, 
+            'Vize 2': { date: "11.12.2025", score: 70 }, 
+            'Final': { date: "12.01.2026", score: 90 } 
+        },
         teacher: 'Prof. Dr. Tuncay Aydoğan',
         akts: 5,
         hour: 4,
-        semester: '1. Semester',
-        type: 'Compulsory'
+        absences: 2,
+        grade: 'AA'
     }, {
         title: 'Bilgisayar Mühendisliğine Giriş',
         code: "BLG-113",
         days: 'Perşembe',
-        exams: { 'Vize 1': "04.11.2025", 'Final': "12.01.2026" },
+        exams: { 
+            'Vize 1': { date: "04.11.2025", score: 95 }, 
+            'Final': { date: "12.01.2026", score: 80 } 
+        },
         teacher: 'Doç Dr. Serep Ergün',
         akts: 3,
         hour: 2,
-        semester: '1. Semester',
-        type: 'Compulsory'
+        absences: 0,
+        grade: 'BA'
     }, {
         title: 'Bilişim Teknolojilerinin Temelleri',
         code: "BLG-115",
         days: 'Salı',
-        exams: { 'Vize 1': "04.11.2025", 'Final': "12.01.2026" },
+        exams: { 
+            'Vize 1': { date: "04.11.2025", score: 60 }, 
+            'Final': { date: "12.01.2026", score: 75 } 
+        },
         teacher: 'Doç Dr. Serep Ergün',
         akts: 3,
         hour: 2,
-        semester: '1. Semester',
-        type: 'Compulsory'
+        absences: 4,
+        grade: 'CB'
     }, {
         title: 'İngilizce I (Hazırlık Eğitimine Tabi Olmayan Öğrenciler İçin)',
         code: "ING-101",
         days: 'Salı',
-        exams: { 'Vize 1': "04.11.2025", 'Final': "12.01.2026" },
+        exams: { 
+            'Vize 1': { date: "04.11.2025", score: 100 }, 
+            'Final': { date: "12.01.2026", score: 95 } 
+        },
         teacher: 'Doç Dr. Serep Ergün',
         akts: 3,
         hour: 2,
-        semester: '1. Semester',
-        type: 'Compulsory'
+        absences: 0,
+        grade: 'AA'
     },
 ];
 
@@ -90,10 +104,12 @@ function Lessons() {
 
     return (
         <div className={"container"}>
-            <div className={"row"}>
+            <div className={"row mb-4"}>
                 <div className="col-12">
-                    <h1>Dersler</h1>
-                    <h5 className={'text-muted'}>Derslerinizi görün, kayıt ve yenileme yapın ve dökümanları inceleyin.</h5><br />
+                    <div className="page-header">
+                        <h1>{t("Lessons Page")}</h1>
+                        <p className="page-description">{t("Lessons Description")}</p>
+                    </div>
                 </div>
             </div>
             <div className={"row"}>
@@ -102,19 +118,19 @@ function Lessons() {
                         <li className="nav-item" role="presentation">
                             <button className="nav-link active" id="pills-lessons-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-lessons" type="button" role="tab" aria-controls="pills-lessons"
-                                    aria-selected="true">Dersleriniz
+                                    aria-selected="true">{t("Lessons Page")}
                             </button>
                         </li>
                         <li className="nav-item" role="presentation">
                             <button className="nav-link" id="pills-upcoming-lessons-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-upcoming-lessons" type="button" role="tab"
-                                    aria-controls="pills-upcoming-lessons" aria-selected="false">Gelecek Dersleriniz
+                                    aria-controls="pills-upcoming-lessons" aria-selected="false">{t("Upcoming Lessons")}
                             </button>
                         </li>
                         <li className="nav-item" role="presentation">
                             <button className="nav-link" id="pills-homeworks-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-homeworks" type="button" role="tab"
-                                    aria-controls="pills-homeworks" aria-selected="false">Ödevler
+                                    aria-controls="pills-homeworks" aria-selected="false">{t("Homeworks")}
                             </button>
                         </li>
                     </ul>
@@ -124,26 +140,18 @@ function Lessons() {
                              aria-labelledby="pills-lessons-tab" tabIndex="0">
                             <div className="row">
                                 <div className="col-12">
-                                    <form onSubmit={e => e.preventDefault()}>
-                                        <div className="mb-3 position-relative">
-                                            <FontAwesomeIcon
-                                                icon={faSearch}
-                                                className="position-absolute"
-                                                style={{
-                                                    left: '15px',
-                                                    top: '50%',
-                                                    transform: 'translateY(-50%)',
-                                                    color: '#6c757d',
-                                                    pointerEvents: 'none'
-                                                }}
-                                            />
+                                    <form onSubmit={e => e.preventDefault()} className="search-form-wrapper mb-4">
+                                        <div className="search-input-container">
                                             <input
                                                 type="text"
-                                                className="form-control ps-5"
-                                                placeholder="Derslerde Ara..."
+                                                className="modern-search-input"
+                                                placeholder={t("Search Lessons") + "..."}
                                                 value={query}
                                                 onChange={(e) => setQuery(e.target.value)}
                                             />
+                                            <div className="search-icon-wrapper">
+                                                <FontAwesomeIcon icon={faSearch} />
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -211,20 +219,20 @@ function Lessons() {
                                                                 </div>
                                                                 <div className="lesson-detail-item">
                                                                     <div className="detail-icon">
-                                                                        <FontAwesomeIcon icon={faLayerGroup} />
+                                                                        <FontAwesomeIcon icon={faCalendarXmark} />
                                                                     </div>
                                                                     <div className="detail-info">
-                                                                        <small>{t("Semester")}</small>
-                                                                        <span>{t(lesson.semester)}</span>
+                                                                        <small>{t("Absences")}</small>
+                                                                        <span>{lesson.absences} {t("Hours")}</span>
                                                                     </div>
                                                                 </div>
                                                                 <div className="lesson-detail-item">
                                                                     <div className="detail-icon">
-                                                                        <FontAwesomeIcon icon={faCertificate} />
+                                                                        <FontAwesomeIcon icon={faCheckCircle} />
                                                                     </div>
                                                                     <div className="detail-info">
-                                                                        <small>{t("Course Type")}</small>
-                                                                        <span>{t(lesson.type)}</span>
+                                                                        <small>{t("Lesson Grade")}</small>
+                                                                        <span>{lesson.grade}</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -232,10 +240,13 @@ function Lessons() {
                                                             <div className="lesson-exams-section mt-4">
                                                                 <h6><FontAwesomeIcon icon={faBook} className="me-2 text-main" /> {t("Exams")}</h6>
                                                                 <div className="exams-flex mt-2">
-                                                                    {Object.entries(lesson.exams).map(([examName, date]) => (
+                                                                    {Object.entries(lesson.exams).map(([examName, details]) => (
                                                                         <div key={examName} className="exam-card">
-                                                                            <span className="exam-name">{examName}</span>
-                                                                            <span className="exam-date">{date}</span>
+                                                                            <div className="d-flex justify-content-between align-items-start mb-1">
+                                                                                <span className="exam-name">{examName}</span>
+                                                                                <span className="exam-score">{details.score}</span>
+                                                                            </div>
+                                                                            <span className="exam-date">{details.date}</span>
                                                                         </div>
                                                                     ))}
                                                                 </div>
@@ -265,43 +276,35 @@ function Lessons() {
                         {/* Next Semester Lessons */}
                         <div className="tab-pane fade" id="pills-upcoming-lessons" role="tabpanel"
                              aria-labelledby="pills-upcoming-lessons-tab" tabIndex="0">
-                            <form onSubmit={e => e.preventDefault()}>
-                                <div className="mb-3 position-relative">
-                                    <FontAwesomeIcon
-                                        icon={faSearch}
-                                        className="position-absolute"
-                                        style={{
-                                            left: '15px',
-                                            top: '50%',
-                                            transform: 'translateY(-50%)',
-                                            color: '#6c757d',
-                                            pointerEvents: 'none'
-                                        }}
+                            <form onSubmit={e => e.preventDefault()} className="search-form-wrapper mb-4">
+                                <div className="search-input-container">
+                                    <input
+                                        type="text"
+                                        className="modern-search-input"
+                                        placeholder={t("Search Lessons") + "..."}
                                     />
-                                    <input type="text" className="form-control ps-5" placeholder="Derslerde Ara..." />
+                                    <div className="search-icon-wrapper">
+                                        <FontAwesomeIcon icon={faSearch} />
+                                    </div>
                                 </div>
                             </form>
-                            <h5 className={"text-muted"}>Gelecek Dönem Dersleriniz</h5>
+                            <h5 className={"text-muted"}>{t("Upcoming Lessons")}</h5>
                             <p className="text-muted">Burada görünecek</p>
                         </div>
 
                         {/* Homeworks */}
                         <div className="tab-pane fade" id="pills-homeworks" role="tabpanel"
                              aria-labelledby="pills-homeworks-tab" tabIndex="0">
-                            <form onSubmit={e => e.preventDefault()}>
-                                <div className="mb-3 position-relative">
-                                    <FontAwesomeIcon
-                                        icon={faSearch}
-                                        className="position-absolute"
-                                        style={{
-                                            left: '15px',
-                                            top: '50%',
-                                            transform: 'translateY(-50%)',
-                                            color: '#6c757d',
-                                            pointerEvents: 'none'
-                                        }}
+                            <form onSubmit={e => e.preventDefault()} className="search-form-wrapper mb-4">
+                                <div className="search-input-container">
+                                    <input
+                                        type="text"
+                                        className="modern-search-input"
+                                        placeholder={t("Search Homeworks") + "..."}
                                     />
-                                    <input type="text" className="form-control ps-5" placeholder="Ödevlerde Ara..." />
+                                    <div className="search-icon-wrapper">
+                                        <FontAwesomeIcon icon={faSearch} />
+                                    </div>
                                 </div>
                             </form>
                         </div>
